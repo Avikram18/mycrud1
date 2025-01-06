@@ -1,7 +1,13 @@
-FROM python:latest
+FROM python:3.8-slim
 
-ADD main.py .
+WORKDIR /code
 
-RUN pip install flask
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-CMD ["python","./main.py"]
+COPY . .
+
+ENV FLASK_APP=main.py
+ENV FLASK_ENV=development
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
