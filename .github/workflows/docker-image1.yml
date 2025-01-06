@@ -19,10 +19,12 @@ jobs:
 
   
   test:
+   steps:
     -name: Run tests
-      run: docker-compose run test
+     run: docker-compose run test
 
       
   clean:
+   steps:
     - name: Clean up
       run: docker-compose down --rmi all --volumes --remove-orphans
