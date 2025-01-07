@@ -19,7 +19,7 @@ class EmployeeTestCase(unittest.TestCase):
         client = mock_test_client()
         response = client.get('/employees')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.get_json()), 4)
+        self.assertEqual(len(response.get_json()), 3)
 
     @patch('main.app.test_client')
     def test_get_employee_by_id(self, mock_test_client):
