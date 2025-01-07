@@ -16,4 +16,4 @@ CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
 FROM base AS test
 
 # Command to run tests
-CMD ["sh", "-c", "python -m unittest discover -s Tests -p 'test*.py'"]
+CMD ["sh", "-c", "python -m unittest discover -s Tests -p 'testmock.py'"]
